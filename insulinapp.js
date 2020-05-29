@@ -1,6 +1,6 @@
-// around line 130 is where im having a problem i think
 let diabetesDisplay ={
     display : [],
+
     displayFoodItem: function (){
         if (this.display.length === 0){
             console.log('This is Empty')
@@ -17,6 +17,7 @@ let diabetesDisplay ={
              }
          }
     },
+
     addCurrentBG:  function (displayText){
         this.display.push(displayText)
     //this.displayInfo();
@@ -30,6 +31,7 @@ let diabetesDisplay ={
      
     
      let handlers = {
+
         addCurrentBG: function(){
             let addCurrentBGText = document.getElementById('addCurrentBGtTextInput')
            // diabetesDisplay.addCurrentBG(addCurrentBGText).value;
@@ -39,8 +41,10 @@ let diabetesDisplay ={
         deleteInfo: function (position) {
             diabetesDisplay.deleteInfo(position);
             view.displayInfo();
+
         }
      }
+
      let view = {
          displayInfo: function(){
              let foodUl = document.querySelector('ul');
@@ -54,16 +58,23 @@ let diabetesDisplay ={
                 foodUl.appendChild(foodLi)
                 }
          },
+
      }
-     ////////
+
+
      const diabetesFoodList = document.querySelector('#food-list ul');
+
      diabetesFoodList.addEventListener('click', function(e){
      if(e.target.className == 'delete'){
          const li =e.target.parentElement;
          diabetesFoodList.removeChild(li);
      }
      })
+
+
+
      const addForm = document.forms['add-food']
+
      addForm.addEventListener('submit', function(e){
        e.preventDefault();
         const value = addForm.querySelector('input[type="text"]').value;
@@ -72,12 +83,16 @@ let diabetesDisplay ={
         foodName.textContent = value;
         const deleteBtn = document.createElement('span');
         deleteBtn.textContent = 'delete';
+
         foodName.classList.add('name');
         deleteBtn.classList.add('delete');
+
         li.appendChild(foodName);
         li.appendChild(deleteBtn);
         diabetesFoodList.appendChild(li);
+
      })
+
      const hideBox = document.querySelector('#hide');
     
      hideBox.addEventListener('change', function(e){
@@ -100,21 +115,31 @@ let diabetesDisplay ={
      }
      });
      });
+
+
    ///////////// below is where im having trouble 
-     
+   
        
 function carbCover(){
     let currentBG = document.getElementById('number');
     let carbValue = parseInt(currentBG.options[currentBG.selectedIndex].value);     
-    console.log(carbValue);
     let totalCarbs = document.getElementById("totalCarbsInput").value
-    document.getElementById("submit").addEventListener("click", function() {
-        console.log(carbValue+totalCarbs)
-    })
 
-    carbCorrection = (carbValue+totalCarbs / carbValue )
+    carbCovering = (totalCarbs / carbValue )
+    
+    console.log(carbCovering)
 
-  
-}
 
 carbCover();
+
+}
+
+function carbCorrection (){
+    let currentBG = document.getElementById('number');
+    let carbValue = parseInt(currentBG.options[currentBG.selectedIndex].value);     
+    let totalCarbs = document.getElementById("totalCarbsInput").value
+      let carbCorrecting=  ((totalBG - 130) /320) 
+      console.log(carbCorrecting)
+}
+  
+
