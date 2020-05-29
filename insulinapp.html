@@ -1,0 +1,186 @@
+<!-- line 137 is where i think im having an issue -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arons Diabetes Calculator</title>
+       <style>
+        
+#page-banner{
+    background: #eee ;
+    padding: 10px 0;
+}
+#page-banner h1, #page-banner p{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+#page-banner input{
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #444;
+}
+#book-list, #add-food, #tabbed-content{
+    margin: 30px;
+}
+#food-list ul, #tabbed-content ul{
+    list-style-type: none;
+    padding: 0;
+}
+#food-list li{
+    padding: 20px;
+    border-left: 5px solid rgb(211, 34, 34);
+    margin: 20px 10px;
+}
+#food-list li:hover{
+    border-color: #9361bf;
+}
+        .delete {
+            float: right;
+    background: lime;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+        }
+        .name{
+            text-size-adjust: 12px;
+        }
+        #add-food{
+    width: 400px;
+    margin: 0 auto;
+    
+}
+#add-food button{
+    border: 1px solid red;
+    background: salmon;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    width: 100px;
+    /* float: left; */
+    margin: 20px 0;
+    border-left: 0;
+    color: white;
+}
+#add-food:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#add-food input{
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+    width: 300px;
+    float: left;
+    clear: both;
+}
+#add-food #hide{
+  width: 30px;
+}
+#add-food label{
+  line-height: 52px;
+}
+#add-carbs button {
+    background-color: limegreen;
+    color: snow;
+    size: 50px;
+}
+.title {
+    position: center;
+}
+    </style>
+</head>
+<body>
+    <div id="page-banner">
+        <h1 class="title">Diabetes App</h1>
+  <p>Aron Diabetes</p>
+  <form id="search-foods">
+    <input type="text" placeholder="Search Foods..." />
+  </form>
+    </div>
+    <!-- this is about where i think the problem is -->
+    <p></p>
+    <form name='carbCorrectionCalc'>
+    <label id= 'timeOfDay'>Choose Meal Time </label>
+    <p></p>
+    <select id="number" onchange="timeOfDay">
+        <option id="breakfast" value = "50">Breakfast</option>
+        <option id = "breakfastSnack" value="70">Breakfast Snack</option>
+        <option id = "lunch" value = "60">Lunch Time</option>
+        <option id = "lunchSnack" value="60">Lunch Time Snack</option>
+        <option id = "dinner" value="65">Dinner</option>
+        <option id = "dinnerSnack" value="65">Dinner Time Snack</option>
+        <option id = "other" value="60">Other</option>
+    </select>
+    </form>
+    
+    <h2 class="title"></h2>
+    <div id="food-list">
+        
+        <form id ="add-carbs">
+            <input id="totalCarbsInput" type="number" placeholder="Add Total Carbs..." />
+            <button id="submit">Submit</button>
+            </form>
+    </div>
+  
+<p></p>
+</h1>
+    <h1>
+       
+            <form id ="add-food">
+            <input type="text" placeholder="Add a Food Item..." />
+            <button>Add</button>
+            <input type="checkbox" id="hide" />
+        <label for="hide">Hide The Food</label>
+        
+        </form>
+        <form id="carbCorrectionCalc" action="">
+        <h2 class="title">Food Items Eaten</h2>
+        <div id="food-list">
+            <form id ="add-food">
+                <input type="text" placeholder="Add a Food Item..." />
+                <button>Add</button>
+    
+            <ul>
+           
+            </ul>
+            </div>
+         
+        </div>
+     
+     
+        </h1>
+    
+   
+    
+    <!-- <div id='add-foodItem'>
+        <ul>
+          <li> 
+              <span class='name'> Name of Book</span>
+              <span class="delete">delete</span>
+          </li>
+        </ul>
+    </div> -->
+    <!-- <h1><div id='addCurrentBGTextInput'>
+        <button onclick = 'handlers.addCurrentBG()'>Add Foods Eaten</button>
+        <input type ='text' id = 'addCurrentBGTextInput' placeholder='Enter Food Eaten'>
+    </div></h1> -->
+    <script src='insulinapp.js'></script>
+</body>
+</html>
